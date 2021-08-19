@@ -36,14 +36,14 @@ $(function() {
     function renderAvatar(user) {
         var name = user.nickname || user.username;
         $('#welcome').html('欢迎&nbsp;&nbsp;' + name)
-        if (user.uesr_pic !== null) {
-            $('.layui-nav-img').attr('src', user.uesr_pic).show()
-            $('.text-avatar').hide()
+        if (user.user_pic !== null) {
+            $('.layui-nav-img').attr('src', user.user_pic).show();
+            $('.text-avatar').hide();
         } else {
-            $('.layui-nav-img').hide();
-            var first = name[0].toUpperCase()
+            //2.渲染文本头像
+            $('.layui-nav-img').hide()
+            var first = name[0].toUpperCase(); //用户名或者昵称的第一个大写字母
             $('.text-avatar').html(first).show();
         }
     }
-
 });
